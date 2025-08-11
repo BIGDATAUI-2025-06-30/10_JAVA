@@ -23,16 +23,16 @@
 
 	확인문제2
 	맞는 코드인지 틀린 코드인지 확인 
-	byte var = 200;							(  	)
-	char var='AB';							(  	)
-	char var=65;							(   )
-	long var=50000000000;					(  	)	
-	float var = 3.14						(  	)
-	double var = 100.0						(  	)
-	String var = "나의직업은 "개발자" 입니다.";	(   )
-	boolean var = 0;						(  	)
-	int v2 = 1e2; 1*10^2					(   )
-	float = 1e2f;	 						(  	)
+	byte var = 200;							( x	)
+	char var='AB';							( x	)
+	char var=65;							( o )
+	long var=50000000000;					( x	)	
+	float var = 3.14;						( x	)
+	double var = 100.0;						( o )
+	String var = "나의직업은 "개발자" 입니다.";	( x )
+	boolean var = 0;						( x	)
+	int v2 = 1e2; 							( x )
+	float = 1e2f;	 						( x	)
 	
 	
 	
