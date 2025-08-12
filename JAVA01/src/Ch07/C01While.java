@@ -93,33 +93,47 @@ public class C01While {
 
 		//06 n부터 m까지 수중(n<m)에 짝수의 합 , 홀수의 합을 각각 구해서 출력
 		
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int m = sc.nextInt();
-		
-		//n<m을 만족하는 처리(n>=m -> swap(tmp임시공간))
-		if(n>=m) {
-			int tmp = n;
-			n = m;
-			m = tmp;
-		}
-		
-		int i=n;
-		int oddSum = 0;	//홀수합
-		int evenSum = 0;//짝수합
-		while(i<=m) {
-			System.out.println("i : " + i);
-			if(i%2==0)
-				evenSum+=i;
-			else
-				oddSum+=i;
-			i++;
-		}	
-		System.out.printf("%d 부터 %d 까지의 짝수 합 : %d 홀수 합 : %d\n", n,m,evenSum,oddSum);
-		
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		int m = sc.nextInt();
+//		
+//		//n<m을 만족하는 처리(n>=m -> swap(tmp임시공간))
+//		if(n>=m) {
+//			int tmp = n;
+//			n = m;
+//			m = tmp;
+//		}
+//		
+//		int i=n;
+//		int oddSum = 0;	//홀수합
+//		int evenSum = 0;//짝수합
+//		while(i<=m) {
+//			System.out.println("i : " + i);
+//			if(i%2==0)
+//				evenSum+=i;
+//			else
+//				oddSum+=i;
+//			i++;
+//		}	
+//		System.out.printf("%d 부터 %d 까지의 짝수 합 : %d 홀수 합 : %d\n", n,m,evenSum,oddSum);
+
 		
 		//07 n단 구구단 출력(2<= n <=9)
 		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		// 유효성 확인( n<2 || n>9 )
+		while(n<2 || n>9) {
+			System.out.println("2<= n <=9 값을 입력하세요!");
+			n = sc.nextInt();
+		}
+		
+		int i=1;
+		while(i<10) {
+			System.out.printf("%d x %d = %d\n", n,i,n*i);
+			i++;
+		}
 		
 		
 
