@@ -418,7 +418,28 @@ public class C02While {
 //		--------------------------
 //		i=0	j=0	k=0
 //		i++	j++	k++
-//		i<4	j<i	j<=3*2 - 2*i
+//		i<4	j<i	k<=3*2 - 2*i
+		
+//		int i = 0;
+//		while(i<4)
+//		{
+//			//공백
+//			int j = 0;
+//			while(j<i)
+//			{
+//				System.out.print(" ");
+//				j++;
+//			}
+//			//별
+//			int k = 0;
+//			while(k<=3*2 - 2*i)
+//			{
+//				System.out.print("*");
+//				k++;
+//			}
+//			System.out.println();
+//			i++;	
+//		}
 		
 		
 		//-------------------------
