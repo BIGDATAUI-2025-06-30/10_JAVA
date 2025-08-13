@@ -461,7 +461,32 @@ public class C02While {
 //		--------------------------
 //		i=0	j=0	k=0
 //		i++	j++	k++
-//		i<h	j<i	j<=(h-1)*2 - 2*i
+//		i<h	j<i	k<=(h-1)*2 - 2*i
+		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		
+//		int i = 0;
+//		while(i<h)
+//		{
+//			//공백
+//			int j = 0;
+//			while(j<i)
+//			{
+//				System.out.print(" ");
+//				j++;
+//			}
+//			//별
+//			int k = 0;
+//			while(k<=(h-1)*2 - 2*i)
+//			{
+//				System.out.print("*");
+//				k++;
+//			}
+//			System.out.println();
+//			i++;	
+//		}
+		
 		
 		
 		//-------------------------
