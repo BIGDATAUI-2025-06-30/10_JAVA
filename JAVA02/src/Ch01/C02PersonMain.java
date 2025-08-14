@@ -10,7 +10,6 @@ class C02Person {
 	
 	//기능
 }
-
 public class C02PersonMain {
 
 	public static void main(String[] args) {
