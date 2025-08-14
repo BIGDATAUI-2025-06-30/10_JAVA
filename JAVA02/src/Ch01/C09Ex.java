@@ -5,10 +5,20 @@ class TV{
 	String brandName;
 	int year;
 	int inch;
+	
+	public TV(String brandName, int year, int inch) {
+		super();
+		this.brandName = brandName;
+		this.year = year;
+		this.inch = inch;
+	}
+
+	public void show() {
+		System.out.printf("%s에서 만든 %d년형 %d인치 TV\n",this.brandName,this.year,this.inch);
+	}
 
 }
 public class C09Ex {
-
 
 	public static void main(String[] args) {
 
