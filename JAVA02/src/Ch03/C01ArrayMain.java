@@ -10,6 +10,7 @@ public class C01ArrayMain {
 		
 //		int [] arr1 = new int[5];
 		int  arr1 []= new int[5];
+		
 		System.out.println("배열길이 : " + arr1.length);
 		System.out.println("5개의 값을 입력하세요");
 		arr1[0] = sc.nextInt();
