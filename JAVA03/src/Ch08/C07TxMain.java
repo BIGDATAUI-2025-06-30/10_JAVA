@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 
-public class C01DbConn {
-	
+public class C07TxMain {
+
 	public static void main(String[] args) {
 		//DB CONN DATA
 		String id = "root";
@@ -21,23 +22,42 @@ public class C01DbConn {
 		
 		//연결작업
 		try {
-			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver Loading Success...");
 			conn = DriverManager.getConnection(url,id,pw);
 			System.out.println("DB CONNECTED...");
 			
+			//TX START
+			conn.setAutoCommit(false);
+			//INSERT 	
+			pstmt = conn.prepareStatement("insert into tbl_a values(1,'a')");
+			pstmt.executeUpdate();
+			//INSERT 	
+			pstmt = conn.prepareStatement("insert into tbl_a values(2,'b')");
+			pstmt.executeUpdate();
+			//INSERT 	
+			pstmt = conn.prepareStatement("insert into tbl_a values(1,'c')");
+			pstmt.executeUpdate();
+			//INSERT 	
+			pstmt = conn.prepareStatement("insert into tbl_a values(4,'d')");
+			pstmt.executeUpdate();			 
+			//TX END
+			conn.commit();
+			
+			
 		}catch(ClassNotFoundException e1) {
 			System.out.println("클래스 부재 예외발생!");
 		}catch(SQLException e2) {
-//			System.out.println("SQL 예외발생!");
-			e2.printStackTrace();
-		}finally {
+			System.out.println("SQL 예외발생!");
+//			e2.printStackTrace();
+			
+			try { System.out.println("ROLLBACK처리!") ;conn.rollback();} catch (SQLException e) {e.printStackTrace();}
+
+		}
+		finally {
 			try {conn.close();} catch (SQLException e) {e.printStackTrace();}
 		}
-		
-		
-		
-	}
-}
 
+	}
+
+}
