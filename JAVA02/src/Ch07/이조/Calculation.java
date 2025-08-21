@@ -7,5 +7,9 @@ public interface Calculation {
 	//나머지는 자유롭게 - !
 	
 	void Run(int n1 , int n2);
+	void Run(int ...args);
+	void Run(double ...args);
+	void Run(String ...args);
+	
 
 }
