@@ -8,7 +8,12 @@ public interface Calculation {
 	
 	void Run(int n1, int n2);	
 	void Run(int n1, int n2, int n3, int n4, int n5);
-	void Run(double n1, double n2, double n3, double n4, double n5);
-	void Run(String s1, String s2, String s3, String s4, String s5);
+	void Run(double n1, double n2, double n3, double n4);
+	void Run(String s1, String s2, String s3, String s4);
+	
+	// 예시
+//	int MAX_VALUE = 100000;
+//	void Run(int n1, int n2); // n1, n2 받아 두 수의 합을 console창에 출력해주세요. 입력값은 MAX_VALUE보다 작아야합니다.
+//	int Run_by_keyboard(); // 키보드로 두 수의 입력값을 받아 
 
 }
