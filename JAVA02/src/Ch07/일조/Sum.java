@@ -16,14 +16,18 @@ public class Sum implements Ch07.일조.Calculation{
 	}
 
 	@Override
-	public void Run(double n1, double n2, double n3, double n4, double n5) {
-		double sum = n1 + n2 + n3 + n4 + n5;
+	public void Run(double n1, double n2, double n3, double n4) {
+		double sum = n1 + n2 + n3 + n4;
 		System.out.printf("일조 이인호 덧셈 결과: %f\n", sum);	
 	}
 
 	@Override
-	public void Run(String s1, String s2, String s3, String s4, String s5) {
-		System.out.println(s1 + s2 + s3 + s4 + s5);
+	public void Run(String s1, String s2, String s3, String s4) {
+		System.out.println(s1 + s2 + s3 + s4);
 	}
+
+	
+
+	
 
 }
