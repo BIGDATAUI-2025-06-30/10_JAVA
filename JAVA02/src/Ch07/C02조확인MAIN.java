@@ -4,7 +4,7 @@ public class C02조확인MAIN {
 
 	public static void main(String[] args) {
 		//--------------------
-		// 1조 확인		
+		// 2조 확인		
 		//--------------------
 		Ch07.이조.Calculation cal1 = new Ch07.이조.Sum();
 		cal1.run(10,20);	//2개 인자 받아 덧셈 화면 출력
