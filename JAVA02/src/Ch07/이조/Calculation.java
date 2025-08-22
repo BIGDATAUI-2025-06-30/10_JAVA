@@ -10,6 +10,6 @@ public interface Calculation {
 	void Run(int ...args);
 	void Run(double ...args);
 	void Run(String ...args);
-	
+	void Run(Long sg);
 
 }
