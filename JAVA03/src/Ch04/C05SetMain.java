@@ -19,20 +19,20 @@ class Person{
 		this.age = age;
 	}
 	
-//	//equals를 재정의해서 name,age가 동일하면 true / 아니면 false 
-//	@Override
-//	public boolean equals(Object obj) {
-//		if(obj instanceof Person) {
-//			Person down = (Person)obj;	//downcasting
-//			return this.name.equals(down.name) && this.age == down.age;
-//		}
-//		return false;
-//	}
-//	//hashCode() 재정의 -> HashSet의 동등객체 판단처리
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(this.name,this.age);
-//	}
+	//equals를 재정의해서 name,age가 동일하면 true / 아니면 false 
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Person) {
+			Person down = (Person)obj;	//downcasting
+			return this.name.equals(down.name) && this.age == down.age;
+		}
+		return false;
+	}
+	//hashCode() 재정의 -> HashSet의 동등객체 판단처리
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.name,this.age);
+	}
 	
 	
 }
