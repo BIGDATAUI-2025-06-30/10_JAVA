@@ -1,14 +1,31 @@
 package Ch03;
 
+abstract class 팝콘재료{
+	
+}
 
-class 캬라멜{
-	
+class 캬라멜 extends 팝콘재료{
+
+	@Override
+	public String toString() {
+		return "캬라멜맛";
+	}
 }
-class 버터옥수수{
-	
+class 버터옥수수 extends 팝콘재료{
+	@Override
+	public String toString() {
+		return "옥수수맛";
+	}	
 }
-class PopCorn<T>{
-	
+class PopCorn<T extends 팝콘재료>{
+	T 재료 ;
+	public PopCorn(T 재료) {
+		this.재료 = 재료;
+	}
+	@Override
+	public String toString() {
+		return "PopCorn [재료=" + 재료 + "]";
+	}
 }
 public class C02Ex {
 
