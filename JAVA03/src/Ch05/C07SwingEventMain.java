@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-class GUI extends JFrame implements ActionListener,KeyListener	{
+class GUI extends JFrame implements ActionListener,KeyListener,MouseListener{
 	JButton btn1;
 	JButton btn2;
 	JButton btn3;
@@ -55,6 +57,8 @@ class GUI extends JFrame implements ActionListener,KeyListener	{
 		btn3.addActionListener(this);
 		btn4.addActionListener(this);
 		txt1.addKeyListener(this);
+		area.addMouseListener(this);
+		
 		
 		//Panel에 Component추가
 		panel.add(btn1);
@@ -114,6 +118,50 @@ class GUI extends JFrame implements ActionListener,KeyListener	{
 		//사용자가 키를 뗏을때
 //		System.out.println("keyReleased..."+e.getKeyChar());
 //		System.out.println("keyReleased..."+e.getKeyCode());
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		try {
+			System.out.println("클릭됨!");
+			int offset = area.viewToModel(e.getPoint());
+			System.out.println("offset : " + offset);
+			int row = area.getLineOfOffset(offset);
+			System.out.println("row : " + row);
+			int startOffset = area.getLineStartOffset(row);
+			int endOffset = area.getLineEndOffset(row);
+			System.out.printf("start : %d - end : %d\n" , startOffset,endOffset);
+			String str = area.getText(startOffset,endOffset-startOffset);
+			System.out.println("str : " + str);
+		}catch(Exception e2) {
+			e2.printStackTrace();
+		}
+		
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
