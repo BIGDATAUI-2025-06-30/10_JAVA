@@ -17,6 +17,7 @@ public class C08PropertiesMain {
 		System.out.println("packagePath : " + packagePath);
 		
 		String filePath = dirPath+File.separator +"src"+File.separator +packagePath+File.separator+"application.properties";
+		System.out.println("filePath : " + filePath);
 		FileInputStream fin = new FileInputStream(filePath);
 		//
 		Properties properties = new Properties();
