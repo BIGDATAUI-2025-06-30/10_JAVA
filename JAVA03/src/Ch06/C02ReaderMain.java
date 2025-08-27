@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-public class ReaderMain {
+public class C02ReaderMain {
 
 	public static void main(String[] args) throws IOException {
 		Reader fin = new FileReader("c:\\IOTEST\\test1.txt");

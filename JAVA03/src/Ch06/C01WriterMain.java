@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class WriterMain {
+public class C01WriterMain {
 	
 	public static void main(String[] args) throws IOException {
 //		Writer fout = new FileWriter("c:\\IOTEST\\test1.txt",false); //덮어쓰기
