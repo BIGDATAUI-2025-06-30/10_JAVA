@@ -9,5 +9,9 @@
 	<classpathentry kind="lib" path="src/Ch08/mysql-connector-j-9.4.0.jar"/>
 	<classpathentry kind="lib" path="src/Ch06/jsoup-1.21.2.jar"/>
 	<classpathentry kind="lib" path="src/Ch06/selenium-server-4.35.0.jar"/>
+	<classpathentry kind="lib" path="src/Ch06/jackson-annotations-2.19.2.jar"/>
+	<classpathentry kind="lib" path="src/Ch06/jackson-core-2.19.2.jar"/>
+	<classpathentry kind="lib" path="src/Ch06/jackson-databind-2.19.2.jar"/>
+	<classpathentry kind="lib" path="src/Ch06/jackson-datatype-jsr310-2.19.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
