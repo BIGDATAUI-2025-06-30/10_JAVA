@@ -43,7 +43,7 @@ public class C10SelenumAPIMain {
 		WebElement searchEl = driver.findElement(By.id("query"));
 		
 		//키워드 입력
-		searchEl.sendKeys("모니터");
+		searchEl.sendKeys("건조기");
 		
 		//엔터키 전달
 		searchEl.sendKeys(Keys.RETURN);
@@ -59,14 +59,11 @@ public class C10SelenumAPIMain {
 		Thread.sleep(500);
 		
 //		//네이버포털 -> '노트북'검색 -> 쇼핑 클릭-> 삼성 노트북(엔터) -> 리뷰 많은순 클릭
-		List<WebElement> Els =  driver.findElements(By.cssSelector(".subFilter_sort__lhuHl"));
-		Els.forEach(el->{
-			if(el.getText().contains("리뷰 많은순"))
-				el.click();
-		});
+		WebElement El =  driver.findElement(By.cssSelector(".subFilter_sort_box__js3FA a:nth-child(6)"));
+		El.click();
 //		
 //		//영역내 모든 정보 긁어오기 basicList_list_basis__uNBZx
-		List<WebElement> El2s =  driver.findElements(By.cssSelector(".basicList_list_basis__uNBZx"));
+		List<WebElement> El2s =  driver.findElements(By.cssSelector(".basicList_list_basis__XVx_G"));
 		
 		
 		//파일로 저장
