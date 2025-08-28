@@ -5,7 +5,8 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Date;
 
-class Board implements Serializable{
+class Board implements Serializable
+{
 	
 	private static final long serialVersionUID = 1L;
 	
