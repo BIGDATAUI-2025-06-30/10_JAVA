@@ -5,8 +5,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class C11RestRequestResponseMain {
@@ -42,9 +43,68 @@ public class C11RestRequestResponseMain {
 //		}
 		
 		//04-02) JAVA Class 로 변환
-		
-		
-		
+		Root responseObject =  objectMapper.readValue(response.body(), Root.class);
+		System.out.println("status : " + responseObject.status);
+		System.out.println("total : " + responseObject.total);
+		responseObject.data.forEach(System.out::println);
+	}
+	
+	//Inner class
+	private static class Data{
+	    public String cnt;
+	    @JsonProperty("OPENDATA_ID") 
+	    public String oPENDATA_ID;
+	    @JsonProperty("GNG_CS") 
+	    public String gNG_CS;
+	    @JsonProperty("FD_CS") 
+	    public String fD_CS;
+	    @JsonProperty("BZ_NM") 
+	    public String bZ_NM;
+	    @JsonProperty("TLNO") 
+	    public String tLNO;
+	    @JsonProperty("MBZ_HR") 
+	    public String mBZ_HR;
+	    @JsonProperty("SEAT_CNT") 
+	    public String sEAT_CNT;
+	    @JsonProperty("PKPL") 
+	    public String pKPL;
+	    @JsonProperty("HP") 
+	    public String hP;
+	    @JsonProperty("PSB_FRN") 
+	    public String pSB_FRN;
+	    @JsonProperty("BKN_YN") 
+	    public String bKN_YN;
+	    @JsonProperty("INFN_FCL") 
+	    public String iNFN_FCL;
+	    @JsonProperty("BRFT_YN") 
+	    public String bRFT_YN;
+	    @JsonProperty("DSSRT_YN") 
+	    public String dSSRT_YN;
+	    @JsonProperty("MNU") 
+	    public String mNU;
+	    @JsonProperty("SMPL_DESC") 
+	    public String sMPL_DESC;
+	    @JsonProperty("SBW") 
+	    public String sBW;
+	    @JsonProperty("BUS") 
+	    public String bUS;
+	    
+		@Override
+		public String toString() {
+			return "Data [cnt=" + cnt + ", oPENDATA_ID=" + oPENDATA_ID + ", gNG_CS=" + gNG_CS + ", fD_CS=" + fD_CS
+					+ ", bZ_NM=" + bZ_NM + ", tLNO=" + tLNO + ", mBZ_HR=" + mBZ_HR + ", sEAT_CNT=" + sEAT_CNT
+					+ ", pKPL=" + pKPL + ", hP=" + hP + ", pSB_FRN=" + pSB_FRN + ", bKN_YN=" + bKN_YN + ", iNFN_FCL="
+					+ iNFN_FCL + ", bRFT_YN=" + bRFT_YN + ", dSSRT_YN=" + dSSRT_YN + ", mNU=" + mNU + ", sMPL_DESC="
+					+ sMPL_DESC + ", sBW=" + sBW + ", bUS=" + bUS + "]";
+		}
+	    
+	    
+	}
+
+	private static class Root{
+	    public String status;
+	    public String total;
+	    public ArrayList<Data> data;
 	}
 
 }
