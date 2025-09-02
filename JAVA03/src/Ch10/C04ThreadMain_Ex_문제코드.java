@@ -1,4 +1,4 @@
-//package Ch23;
+//package Ch10;
 //
 //class IncrementThread implements Runnable {
 //	private static int counter = 0;
@@ -41,6 +41,7 @@
 //		thread2.start();
 //		thread3.start();
 //		thread4.start();
+//		
 //		//메인 스레드가 thread1,thread2의 작업이 모두 완료될 때까지 대기하도록 설정
 //		thread1.join();
 //		thread2.join();

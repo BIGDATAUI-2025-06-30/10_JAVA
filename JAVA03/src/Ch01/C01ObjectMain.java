@@ -23,6 +23,7 @@ public class C01ObjectMain {
 		System.out.println(ob2);
 		System.out.println(ob2.toString());
 
+	
 	}
 
 }
