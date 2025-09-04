@@ -1,6 +1,5 @@
 package Ch14;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 
@@ -15,7 +14,7 @@ public class C01BASIC {
 //		for(Field field : fields) {
 //			System.out.println(field);
 //		}
-		
+	
 		//모든 생성자 확인
 //		Constructor[] constructors =  clazz.getDeclaredConstructors();
 //		for(Constructor con : constructors) {

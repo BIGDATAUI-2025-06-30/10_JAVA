@@ -59,7 +59,7 @@ class Sgui extends JFrame implements ActionListener, KeyListener {
 
 		// 소켓연결-ServerSocket
 		// 서버 소켓 생성
-		server = new ServerSocket(7003); // 192.168.16.203:7000
+		server = new ServerSocket(7000); // 192.168.16.203:7000
 		System.out.println("[INFO] SERVER SOCKET LISTENING");
 
 		// 1회 응답

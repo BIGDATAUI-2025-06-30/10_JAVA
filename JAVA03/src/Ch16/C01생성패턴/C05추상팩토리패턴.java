@@ -35,7 +35,7 @@ class RectangleFactory implements AbstractFactory {
         return new Rectangle();
     }
 }
-public class C03추상팩토리패턴 {
+public class C05추상팩토리패턴 {
     public static void main(String[] args) {
         AbstractFactory circleFactory = new CircleFactory();
         Shape circle = circleFactory.createShape();

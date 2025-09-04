@@ -1,6 +1,6 @@
 package Ch16.C01생성패턴;
 
-//여기 설명 주석 추가해줘   
+  
 //팩토리 메서드 패턴은 객체 생성을 서브클래스에서 결정하도록 하는 디자인 패턴입니다. 
 //이 패턴은 객체 생성 로직을 분리하고 서브클래스에서 구체적인 구현을 결정하도록 합니다.
 
@@ -72,7 +72,7 @@ class CatFactory implements AnimalFactory {
 
 
 
-public class C02팩토리메서드패턴 {
+public class C04팩토리메서드패턴 {
     public static void main(String[] args) {
         AnimalFactory dogFactory = new DogFactory();
         Animal dog = dogFactory.createAnimal();

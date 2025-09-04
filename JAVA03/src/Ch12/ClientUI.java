@@ -55,7 +55,7 @@ class Cgui extends JFrame implements ActionListener,KeyListener
 		setVisible(true);	//프레임창 보여주기
 		
 		//소켓 연결
-		client = new Socket("192.168.16.203",7002);
+		client = new Socket("192.168.5.50",7000);
 		System.out.println("[SERVER] 연결 시작합니다");
 		// INOUT STREAM
 		System.out.println("CLIENT IP : " + client.getInetAddress());

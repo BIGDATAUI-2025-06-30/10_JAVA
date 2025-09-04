@@ -55,7 +55,7 @@ public class C02BASIC {
 //		Object result = method.invoke(ob,null);
 //		System.out.println(result);
 		
-//		//reflect로 생성자 사용하기
+		//reflect로 생성자 사용하기
 //		Constructor<?> constructor = clazz.getConstructor(String.class); //인자1 개받는 생성자
 //		System.out.println(constructor);
 //		Object obj =  constructor.newInstance("홍길동");
