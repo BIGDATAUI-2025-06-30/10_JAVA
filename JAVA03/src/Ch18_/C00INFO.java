@@ -1,4 +1,4 @@
-package Ch18;
+package Ch18_;
 
 public class C00INFO {
 	//자바 스트림(Stream)은 자바 8부터 도입된 기능으로, 
