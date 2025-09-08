@@ -22,7 +22,7 @@ public class C04BufferAddMain {
 			
 			if (data == -1)
 				break;
-			strBuffer.append((char) data);
+			strBuffer.append(buff);
 		}
 
 		System.out.println("총길이 : " + strBuffer.length());
