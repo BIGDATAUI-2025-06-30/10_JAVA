@@ -13,5 +13,7 @@
 	<classpathentry kind="lib" path="src/Ch06/jackson-core-2.19.2.jar"/>
 	<classpathentry kind="lib" path="src/Ch06/jackson-databind-2.19.2.jar"/>
 	<classpathentry kind="lib" path="src/Ch06/jackson-datatype-jsr310-2.19.2.jar"/>
+	<classpathentry kind="lib" path="src/Ch20/auto-service-1.1.1.jar"/>
+	<classpathentry kind="lib" path="src/Ch20/javapoet-1.13.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

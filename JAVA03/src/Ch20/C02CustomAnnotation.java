@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 //ElementType.FIELD :  멤버 변수에 적용
 //ElementType.METHOD : 메서드에 적용 
 @Target({ElementType.TYPE,ElementType.METHOD})
-public @interface CustomAnnotation {
+public @interface C02CustomAnnotation {
 	String value() default "HELLO WORLD";
 	int number() default 1;
 	boolean isOpen() default false;
