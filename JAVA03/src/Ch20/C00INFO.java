@@ -1,9 +1,8 @@
 package Ch20;
 
 public class C00INFO {
-	package Ch34;
 
-	public class C00INFO {
+
 		//출처: https://ittrue.tistory.com/156 [IT is True:티스토리]
 		//	
 		//어노테이션이란? (Annotation) - @
@@ -58,6 +57,6 @@ public class C00INFO {
 		//사용자 정의 어노테이션
 		//사용자가 직접 정의하여 사용하는 어노테이션이다.
 
-	}
+	
 
 }
