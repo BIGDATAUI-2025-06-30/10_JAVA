@@ -8,10 +8,10 @@ import java.util.function.Function;
 //03 func3완성 - List<String>에서 각 문자열의 첫 글자를 추출하여 대문자로 변환하여 리턴
 
 public class C04Ex {
+	
 	public static Function<List<String>,Integer> func1; //
 	public static Function<List<String>,Integer> func2; //
 	public static Function<List<String>,Integer> func3; //
-	
 	
 	public static void main(String[] args) {
 		
