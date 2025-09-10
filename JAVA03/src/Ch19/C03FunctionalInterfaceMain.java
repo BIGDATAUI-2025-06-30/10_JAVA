@@ -1,5 +1,10 @@
 package Ch19;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 //제공되는 함수형 인터페이스들
 //Function<T, R>:
@@ -23,9 +28,71 @@ package Ch19;
 
 public class C03FunctionalInterfaceMain {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	//01
+	public static Function<Integer, Integer> func1=x->x*x;
+	//02
+	public static Function<Integer, Integer> func2=x->x+x;
+	//03
+	public static Function< List<Integer>, Integer> func3=x->x.stream().reduce(0,(sum,el)->{return sum+el;});
+	BinaryOperator<String> a = null;
+	//04
+	public static Function< List<Object>, Integer> func4=(li)->{
+		//01 List의 각 요소중 Integer만 filter
+		//02 필터링된 Integer의 재구성(map)
+		//03 누적합(reduce)
+		
+		return li.stream()
+			.filter((el)->{return el instanceof Integer;})
+			.map((el)->{return (Integer)el;})
+			.reduce(0,(sum,el)->{return sum+el;});
+		
+	};
+	//05
+	public static Function< List<Object>, List<String> > func5 = (li)->{
+		return li.stream()
+			.filter((el)->{return el instanceof String;})
+			.map((el)->{return "- "+(String)el+" -";})
+			.collect(Collectors.toList());
+	};
+	
+	//06
+	public static Function<Integer,Integer> func6 = func1.andThen(func2);
+	//07
+	public static Function<List<Integer>,Integer> func7 = func3.andThen(func2).andThen(func1);
+	
+	//08
+	public static Function<Integer , Function<Integer,Integer> > func8 = (x)->{ 
 
+		//
+		System.out.println("func8 x : " + x);
+		return (n)->{
+			//
+			System.out.println("func8 n : " + n);
+			return n+x;
+		}; 
+	
+	};
+	public static Function<Integer , Function<Integer,Integer> > func9 = x->y->x+y;
+	public static void main(String[] args) {
+		
+		//01
+		System.out.println( func1.apply(10) );
+		//02
+		System.out.println( func2.apply(10) );
+		//03
+		System.out.println( func3.apply(  Arrays.asList(10,20,30,50)  ) );
+		//04
+		System.out.println( func4.apply(  Arrays.asList(11,10.5,"TEST",true,new StringBuffer(),20,40 ) ) );
+		//05
+		System.out.println( func5.apply(  Arrays.asList("10",55,7,"HELLO",true,"WORLD")  ) );
+		//06
+		System.out.println( func6.apply(10) );
+		//07
+		System.out.println( func7.apply(  Arrays.asList(10,20,30,40)  ) );
+		//08
+		System.out.println( func8.apply(10).apply(20)   );
+		//09
+		System.out.println( func9.apply(10).apply(20)   );
 	}
 
 }
