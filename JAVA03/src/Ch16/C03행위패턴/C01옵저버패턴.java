@@ -1,7 +1,14 @@
 package Ch16.C03행위패턴;
-//옵저버 패턴 (Observer Pattern):
-//이 패턴은 한 객체의 상태 변화를 관찰하는 다른 객체들에게 자동으로 알림을 전달하는 패턴입니다. 
-//주체(Subject)와 관찰자(Observer)로 구성되며, 상태 변화가 발생하면 관찰자들에게 알림이 전달됩니다.
+
+/* ----------------------------------------------------------
+   1. 옵저버 패턴 (Observer)
+   ----------------------------------------------------------
+   설명 : 한 객체(Subject)의 상태 변화를 여러 객체(Observer)에 자동 알림
+   비유 : 유튜브 구독 (영상 올리면 구독자 모두에게 알림)
+   용도 : - 이벤트 처리 / 리스너
+          - GUI 버튼 클릭 처리
+          - 데이터 바인딩 (모델 변경 → 뷰 자동 갱신)
+   ---------------------------------------------------------- */
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +88,7 @@ class HexaObserver implements Observer {
     }
 }
 
-public class C06옵저버패턴 {
+public class C01옵저버패턴 {
     public static void main(String[] args) {
         Subject subject = new Subject();
 

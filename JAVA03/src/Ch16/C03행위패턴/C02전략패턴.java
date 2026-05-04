@@ -1,7 +1,15 @@
 package Ch16.C03행위패턴;
-//전략 패턴 (Strategy Pattern):
-//이 패턴은 실행 중에 알고리즘을 선택할 수 있도록 하는 패턴입니다. 알고리즘을 캡슐화하여 각각의 
-//전략을 독립적으로 변경할 수 있으며, 클라이언트는 전략을 선택하여 사용합니다.
+
+/* ----------------------------------------------------------
+   2. 전략 패턴 (Strategy)
+   ----------------------------------------------------------
+   설명 : 알고리즘을 캡슐화해서 실행 시점에 자유롭게 교체
+   비유 : 결제 방식 선택 (카드 / 현금 / 카카오페이)
+   용도 : - 같은 작업을 여러 방식으로 처리해야 할 때
+          - if-else 분기로 알고리즘 선택하던 코드 정리
+          - 정렬, 압축, 인증 방식 등 동적 교체
+   ---------------------------------------------------------- */
+
 interface Strategy {
     int execute(int num1, int num2);
 }
@@ -38,7 +46,7 @@ class Context {
     }
 }
 
-public class C08전략패턴 {
+public class C02전략패턴 {
     public static void main(String[] args) {
         Context context = new Context(new AddStrategy());
         int result = context.executeStrategy(10, 5);
