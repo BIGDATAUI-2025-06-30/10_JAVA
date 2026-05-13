@@ -18,16 +18,16 @@ interface ClosureBox {
 	String open();
 }
 
-// 호출할 때마다 자기 안의 숫자를 1 증가시켜 반환 (가변 클로저)
-interface TickBox {
-	int tick();
-}
 
 // 인자X / 반환X - 단순 실행 작업 (필드 트릭 데모용)
 interface Task {
 	void run();
 }
 
+//호출할 때마다 자기 안의 숫자를 1 증가시켜 반환 (가변 클로저)
+interface TickBox {
+	int tick();
+}
 public class C06ClosureMutable {
 
 	private int instanceCount = 0;
