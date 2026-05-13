@@ -9,8 +9,7 @@ package Ch19;
      - 뺄셈 / 나눗셈은 큰 수 → 작은 수로 정렬 후 누적 감산 / 누적 제산
        (예: sub(1,4,2,9) → 정렬 9,4,2,1 → 9-4-2-1 = 2)
 
-   풀이 :   Calc 생성자 안의 sum / sub / mul / div 람다 채우기
-            (정답은 C02ExAns.java)
+   정답 참고 : C02ExAns.java
    ---------------------------------------------------------- */
 
 @FunctionalInterface
@@ -25,10 +24,10 @@ class Calc {
 	Functional div;   // 나누기
 
 	Calc() {
-		// TODO Functional sum 람다 작성  (힌트 : Arrays.stream(args).reduce(0, (a,b)->a+b))
-		// TODO Functional sub 람다 작성  (힌트 : boxed().sorted((a,b)->b-a).reduce((a,b)->a-b).orElse(0))
-		// TODO Functional mul 람다 작성  (힌트 : reduce(1, (a,b)->a*b))
-		// TODO Functional div 람다 작성  (힌트 : boxed().sorted((a,b)->b-a).reduce((a,b)->a/b).orElse(0))
+		// TODO sum 람다 작성
+		// TODO sub 람다 작성
+		// TODO mul 람다 작성
+		// TODO div 람다 작성
 	}
 }
 
@@ -37,10 +36,12 @@ public class C02Ex {
 	public static void main(String[] args) {
 		Calc calc = new Calc();
 
-		// 람다가 비어 있으면 NullPointerException - 학생이 채워야 동작
-		System.out.println("합     : " + (calc.sum == null ? "TODO" : calc.sum.execute(10, 20, 30, 40, 50, 60)));
-		System.out.println("차     : " + (calc.sub == null ? "TODO" : calc.sub.execute(1, 4, 2, 9)));
-		System.out.println("곱     : " + (calc.mul == null ? "TODO" : calc.mul.execute(10, 20, 30, 40, 50, 60)));
-		System.out.println("나눗셈 : " + (calc.div == null ? "TODO" : calc.div.execute(10, 20, 30, 40, 50, 60)));
+		// 람다 채우면 아래 실행 가능
+		// 기대 출력 :
+		//   합     : 210
+		//   차     : 2
+		//   곱     : 720000000
+		//   나눗셈 : 0
+		// TODO 답안 작성 후 calc.sum / sub / mul / div 호출
 	}
 }

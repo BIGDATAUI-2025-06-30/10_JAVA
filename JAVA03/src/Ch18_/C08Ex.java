@@ -4,20 +4,19 @@ package Ch18_;
    8-Ex. [학생용 문제] 종합 - 직원 데이터로 스트림 활용
    ----------------------------------------------------------
    주어진 직원 리스트에서 :
-     Q1. IT 부서 직원만 골라 이름순으로 정렬해 이름 리스트로 반환
-     Q2. 부서별 평균 연봉 (Map<부서, 평균>)
-     Q3. 연봉 상위 3 명의 이름
-     Q4. 전체 연봉 합계
-     Q5. 모든 직원의 나이가 20 이상인지 검사
-     Q6. 부서 종류 (중복 제거된 부서 이름 리스트)
-     Q7. 부서별 직원 수 (Map<부서, count>)
+     Q1. IT 부서 직원만 골라 이름순으로 정렬해 이름 리스트로 출력
+     Q2. 부서별 평균 연봉 (Map<부서, 평균>) 출력
+     Q3. 연봉 상위 3 명의 이름 출력
+     Q4. 전체 연봉 합계 출력
+     Q5. 모든 직원의 나이가 20 이상인지 검사 결과 출력
+     Q6. 부서 종류 (중복 제거된 부서 이름 리스트) 출력
+     Q7. 부서별 직원 수 (Map<부서, count>) 출력
 
-   (정답은 C08ExAns.java)
+   정답 참고 : C08ExAns.java
    ---------------------------------------------------------- */
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class C08Ex {
 
@@ -52,32 +51,25 @@ public class C08Ex {
 				new Emp("한미래", "IT",   33, 5500)
 		);
 
-		// Q1. IT 부서 이름순 정렬 → 이름 리스트
-		List<String> q1 = null; // TODO
-		System.out.println("Q1. IT 부서 이름순 : " + q1);
+		// Q1. IT 부서 이름순 정렬 → 이름 리스트 출력
+		// TODO 답안 작성
 
-		// Q2. 부서별 평균 연봉 (Collectors.groupingBy + averagingInt)
-		Map<String, Double> q2 = null; // TODO
-		System.out.println("Q2. 부서별 평균 연봉 : " + q2);
+		// Q2. 부서별 평균 연봉 출력
+		// TODO 답안 작성
 
-		// Q3. 연봉 상위 3명의 이름 (sorted + limit + map)
-		List<String> q3 = null; // TODO
-		System.out.println("Q3. 연봉 상위 3명 : " + q3);
+		// Q3. 연봉 상위 3명의 이름 출력
+		// TODO 답안 작성
 
-		// Q4. 전체 연봉 합계 (mapToInt + sum)
-		int q4 = 0; // TODO
-		System.out.println("Q4. 연봉 합계 : " + q4);
+		// Q4. 전체 연봉 합계 출력
+		// TODO 답안 작성
 
-		// Q5. 모두 20세 이상? (allMatch)
-		boolean q5 = false; // TODO
-		System.out.println("Q5. 모두 20세 이상? : " + q5);
+		// Q5. 모두 20세 이상? 출력
+		// TODO 답안 작성
 
-		// Q6. 부서 종류 (map + distinct)
-		List<String> q6 = null; // TODO
-		System.out.println("Q6. 부서 종류 : " + q6);
+		// Q6. 부서 종류 (중복 제거) 출력
+		// TODO 답안 작성
 
-		// Q7. 부서별 직원 수 (groupingBy + counting)
-		Map<String, Long> q7 = null; // TODO
-		System.out.println("Q7. 부서별 인원 : " + q7);
+		// Q7. 부서별 직원 수 출력
+		// TODO 답안 작성
 	}
 }
