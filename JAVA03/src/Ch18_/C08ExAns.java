@@ -1,25 +1,17 @@
 package Ch18_;
 
 /* ----------------------------------------------------------
-   8-Ex. [학생용 문제] 종합 - 직원 데이터로 스트림 활용
+   8-Ex. [정답] 종합 - 직원 데이터로 스트림 활용
    ----------------------------------------------------------
-   주어진 직원 리스트에서 :
-     Q1. IT 부서 직원만 골라 이름순으로 정렬해 이름 리스트로 반환
-     Q2. 부서별 평균 연봉 (Map<부서, 평균>)
-     Q3. 연봉 상위 3 명의 이름
-     Q4. 전체 연봉 합계
-     Q5. 모든 직원의 나이가 20 이상인지 검사
-     Q6. 부서 종류 (중복 제거된 부서 이름 리스트)
-     Q7. 부서별 직원 수 (Map<부서, count>)
-
-   (정답은 C08ExAns.java)
+   대응 문제 : C08Ex.java
    ---------------------------------------------------------- */
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public class C08Ex {
+public class C08ExAns {
 
 	static class Emp {
 		String name;
@@ -52,32 +44,49 @@ public class C08Ex {
 				new Emp("한미래", "IT",   33, 5500)
 		);
 
-		// Q1. IT 부서 이름순 정렬 → 이름 리스트
-		List<String> q1 = null; // TODO
+		// Q1
+		List<String> q1 = emps.stream()
+				.filter(e -> e.dept.equals("IT"))
+				.sorted((a, b) -> a.name.compareTo(b.name))
+				.map(e -> e.name)
+				.collect(Collectors.toList());
 		System.out.println("Q1. IT 부서 이름순 : " + q1);
 
-		// Q2. 부서별 평균 연봉 (Collectors.groupingBy + averagingInt)
-		Map<String, Double> q2 = null; // TODO
+		// Q2
+		Map<String, Double> q2 = emps.stream()
+				.collect(Collectors.groupingBy(
+						e -> e.dept,
+						Collectors.averagingInt(e -> e.salary)));
 		System.out.println("Q2. 부서별 평균 연봉 : " + q2);
 
-		// Q3. 연봉 상위 3명의 이름 (sorted + limit + map)
-		List<String> q3 = null; // TODO
+		// Q3
+		List<String> q3 = emps.stream()
+				.sorted((a, b) -> b.salary - a.salary)
+				.limit(3)
+				.map(e -> e.name)
+				.collect(Collectors.toList());
 		System.out.println("Q3. 연봉 상위 3명 : " + q3);
 
-		// Q4. 전체 연봉 합계 (mapToInt + sum)
-		int q4 = 0; // TODO
+		// Q4
+		int q4 = emps.stream().mapToInt(e -> e.salary).sum();
 		System.out.println("Q4. 연봉 합계 : " + q4);
 
-		// Q5. 모두 20세 이상? (allMatch)
-		boolean q5 = false; // TODO
+		// Q5
+		boolean q5 = emps.stream().allMatch(e -> e.age >= 20);
 		System.out.println("Q5. 모두 20세 이상? : " + q5);
 
-		// Q6. 부서 종류 (map + distinct)
-		List<String> q6 = null; // TODO
+		// Q6
+		List<String> q6 = emps.stream()
+				.map(e -> e.dept)
+				.distinct()
+				.collect(Collectors.toList());
 		System.out.println("Q6. 부서 종류 : " + q6);
 
-		// Q7. 부서별 직원 수 (groupingBy + counting)
-		Map<String, Long> q7 = null; // TODO
+		// Q7
+		Map<String, Long> q7 = emps.stream()
+				.collect(Collectors.groupingBy(
+						e -> e.dept,
+						Collectors.counting()));
 		System.out.println("Q7. 부서별 인원 : " + q7);
 	}
 }

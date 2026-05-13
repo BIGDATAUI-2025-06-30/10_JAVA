@@ -1,17 +1,16 @@
 package Ch18_;
 
 /* ----------------------------------------------------------
-   1-Ex. [학생용 연습] filter / map 기초
+   1-Ex. [학생용 문제] filter / map 기초
    ----------------------------------------------------------
    학습 단계 : C01STREAMMAIN 학습 직후
    준비 :   filter(Predicate), map(Function), collect(toList) 이해
-   목표 :   filter + map + collect 만으로 아래 5문제 풀이
+   풀이 :   각 Q 의 TODO 부분에 stream 파이프라인 작성
+            (정답은 C01ExFilterMapAns.java 참고)
    ---------------------------------------------------------- */
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class C01ExFilterMap {
 
@@ -23,9 +22,8 @@ public class C01ExFilterMap {
 		// ====================================================
 		List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-		List<Integer> q1 = nums.stream()
-				.filter(n -> n % 2 == 0)
-				.collect(Collectors.toList());
+		List<Integer> q1 = null; // TODO
+
 		System.out.println("Q1. 짝수만        : " + q1);
 
 		// ====================================================
@@ -34,10 +32,8 @@ public class C01ExFilterMap {
 		// ====================================================
 		List<Integer> mixed = Arrays.asList(-3, 5, -1, 8, -7, 2);
 
-		List<Integer> q2 = mixed.stream()
-				.filter(n -> n < 0)
-				.map(Math::abs)        // 메서드 참조로 절댓값 변환
-				.collect(Collectors.toList());
+		List<Integer> q2 = null; // TODO
+
 		System.out.println("Q2. 음수의 절댓값  : " + q2);
 
 		// ====================================================
@@ -46,10 +42,8 @@ public class C01ExFilterMap {
 		// ====================================================
 		List<String> words = Arrays.asList("apple", "hi", "banana", "cat", "elephant");
 
-		List<String> q3 = words.stream()
-				.filter(s -> s.length() >= 5)
-				.map(String::toUpperCase)
-				.collect(Collectors.toList());
+		List<String> q3 = null; // TODO
+
 		System.out.println("Q3. 5글자+대문자  : " + q3);
 
 		// ====================================================
@@ -57,21 +51,18 @@ public class C01ExFilterMap {
 		//     기대 : [9, 36, 81, 144, 225, 324]
 		//     힌트 : IntStream.rangeClosed(1, 20).boxed()
 		// ====================================================
-		List<Integer> q4 = IntStream.rangeClosed(1, 20)
-				.boxed()
-				.filter(n -> n % 3 == 0)
-				.map(n -> n * n)
-				.collect(Collectors.toList());
+		List<Integer> q4 = null; // TODO
+
 		System.out.println("Q4. 3배수의 제곱  : " + q4);
 
 		// ====================================================
-		// Q5. 단어 리스트에서 'a' 로 시작하는 것만 골라 첫 글자만 추출
+		// Q5. words2 에서 'a' 로 시작하는 것만 골라 첫 글자만 추출
 		//     기대 : [a, a, a]  (apple, ant, avocado)
 		// ====================================================
-		List<String> q5 = Arrays.asList("apple", "banana", "ant", "kiwi", "avocado").stream()
-				.filter(s -> s.startsWith("a"))
-				.map(s -> s.substring(0, 1))
-				.collect(Collectors.toList());
+		List<String> words2 = Arrays.asList("apple", "banana", "ant", "kiwi", "avocado");
+
+		List<String> q5 = null; // TODO
+
 		System.out.println("Q5. a로 시작 첫글자: " + q5);
 	}
 }
